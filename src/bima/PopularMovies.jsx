@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const API_KEY = '94d5a1d8423851d4c5e487d3ebb00485';
+const API_KEY = "94d5a1d8423851d4c5e487d3ebb00485";
 const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
 
 const PopularMovies = () => {
@@ -15,7 +15,7 @@ const PopularMovies = () => {
         const response = await axios.get(API_URL);
         setMovies(response.data.results);
       } catch (error) {
-        console.error('Error fetching popular movies:', error);
+        console.error("Error fetching popular movies:", error);
       }
     };
 
@@ -38,7 +38,7 @@ const PopularMovies = () => {
   };
 
   return (
-    <div className="container mx-1 px-4 bg-gray-800 min-h-screen">
+    <div className="container mx-auto px-4 min-h-screen ">
       <h1 className="text-3xl font-semibold text-white my-1 py-3 text-center">
         Popular Movies
       </h1>
@@ -70,14 +70,12 @@ const PopularMovies = () => {
               className="w-full h-64 object-cover"
             />
             <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
+              <h2 className="text-xl font-semibold mb-2 text-white">
                 {movie.title}
               </h2>
-              <p className="text-gray-700 line-clamp-3 text-gray-500 dark:text-gray-300">
-                {movie.overview}
-              </p>
+              <p className="text-white line-clamp-3 ">{movie.overview}</p>
               <div className="bg-gray-900 px-4 py-2 mt-2 rounded-b-lg">
-                <span className="text-gray-700 text-sm dark:text-gray-400">
+                <span className="text-white text-sm ">
                   {movie.release_date}
                 </span>
               </div>

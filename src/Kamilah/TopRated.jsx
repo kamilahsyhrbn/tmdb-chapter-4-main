@@ -38,14 +38,16 @@ export default function TopRated() {
   };
 
   return (
-    <div className="m-6">
-      <h2 className="text-3xl font-black text-center">Top Rated Movies</h2>
+    <div>
+      <h2 className="text-3xl font-black text-center text-white">
+        Top Rated Movies
+      </h2>
       <form onSubmit={handleSubmit} className="my-5">
-        <div className="container flex items-center justify-end">
-          <p>Search by page number: </p>
+        <div className="container flex items-center justify-end text-white">
+          <p>Sort by: </p>
           <select
             onChange={handlePage}
-            className="p-1 mx-3 rounded-lg border border-yellow-300 select-cst"
+            className="p-1 rounded-lg border border-yellow-300 select-cst"
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -56,12 +58,15 @@ export default function TopRated() {
           <select
             value={sortRated}
             onChange={handleChangeRated}
-            className="p-1 mr-3 rounded-lg border border-yellow-300 select-cst"
+            className="p-1 rounded-lg border border-yellow-300 select-cst"
           >
             <option value="vote_average.asc">Top Rated Ascending</option>
             <option value="vote_average.desc">Top Rated Descending</option>
           </select>
-          <button type="submit" className="bg-yellow-300 p-1 rounded-lg ">
+          <button
+            type="submit"
+            className="bg-yellow-300 p-1 px-2 rounded-lg text-black"
+          >
             Go!
           </button>
         </div>
@@ -70,13 +75,13 @@ export default function TopRated() {
       <div className="flex flex-wrap justify-center">
         {rated?.map((movie) => (
           <div key={movie.id}>
-            <div className="flex flex-col transition ease-in-out relative overflow-hidden m-3 min-w-[200px] h-auto z-0 shadow-xl rounded-md hover:scale-110 ">
+            <div className="flex flex-col border-2 transition ease-in-out relative overflow-hidden m-3 min-w-[200px] h-auto z-0 shadow-xl rounded-md hover:scale-110 ">
               <img
                 src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
                 alt={movie.title}
                 className="h-[300px]"
               />
-              <div className="m-2 w-[200px]">
+              <div className="m-2 w-[200px] text-white">
                 <div className="font-black ">{movie.title}</div>
                 <div className="flex justify-between">
                   <p>Vote Count: {movie?.vote_count}</p>

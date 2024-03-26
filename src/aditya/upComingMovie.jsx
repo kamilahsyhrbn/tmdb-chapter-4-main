@@ -62,25 +62,8 @@ export default function upComingMovie() {
   };
 
   return (
-    <div className=" text-white px-16 py-8">
+    <div className=" text-white px-16">
       <div className="">
-        {/* Navbar */}
-        <div className="flex justify-between text-xl bg-transparent">
-          <p className="flex items-center text-3xl">
-            <strong>PRIME</strong>MOVIES
-          </p>
-          <div className="flex items-center">
-            <ul className="flex justify-center align-center">
-              <a href="#" className="mx-5 hover:underline hover:text-white">
-                Home
-              </a>
-              <a href="#" className="mx-5 hover:underline hover:text-white">
-                Up Coming
-              </a>
-            </ul>
-          </div>
-        </div>
-        {/* Accordion */}
         <div>
           <div className="py-12">
             <strong className=" text-2xl">Up Coming</strong>
